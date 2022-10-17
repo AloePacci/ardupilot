@@ -24,6 +24,10 @@ bool Sub::set_mode(control_mode_t mode, ModeReason reason)
         success = stabilize_init();
         break;
 
+    case RAW:
+        success = raw_init();
+        break;
+
     case ALT_HOLD:
         success = althold_init();
         break;
@@ -124,6 +128,10 @@ void Sub::update_flight_mode()
         auto_run();
         break;
 
+    case RAW:
+        raw_run();
+        break;
+
     case CIRCLE:
         circle_run();
         break;
@@ -191,6 +199,7 @@ bool Sub::mode_has_manual_throttle(control_mode_t mode)
     switch (mode) {
     case ACRO:
     case STABILIZE:
+    case RAW:
     case MANUAL:
         return true;
     default:

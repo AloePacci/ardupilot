@@ -35,6 +35,7 @@ enum control_mode_t : uint8_t {
     ACRO =          1,  // manual body-frame angular rate with manual depth/throttle
     ALT_HOLD =      2,  // manual angle with automatic depth/throttle
     AUTO =          3,  // fully automatic waypoint control using mission commands
+    RAW =           5,
     GUIDED =        4,  // fully automatic fly to coordinate or fly at velocity/direction using GCS immediate commands
     CIRCLE =        7,  // automatic circular flight with automatic throttle
     SURFACE =       9,  // automatically return to surface, pilot maintains horizontal control
