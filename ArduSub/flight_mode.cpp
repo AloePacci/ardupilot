@@ -27,6 +27,10 @@ bool Sub::set_mode(control_mode_t mode, ModeReason reason)
     case RAW:
         success = raw_init();
         break;
+    
+    case NO_GPS:
+        success = no_gps_init();
+        break;
 
     case ALT_HOLD:
         success = althold_init();
@@ -132,6 +136,10 @@ void Sub::update_flight_mode()
         raw_run();
         break;
 
+    case NO_GPS:
+        no_gps_run();
+        break;
+
     case CIRCLE:
         circle_run();
         break;
@@ -200,6 +208,7 @@ bool Sub::mode_has_manual_throttle(control_mode_t mode)
     case ACRO:
     case STABILIZE:
     case RAW:
+    case NO_GPS:
     case MANUAL:
         return true;
     default:

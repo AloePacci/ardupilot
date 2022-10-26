@@ -35,6 +35,7 @@ void GCS_Sub::update_vehicle_sensor_status_flags()
     case GUIDED:
     case CIRCLE:
     case RAW:
+    case NO_GPS:
     case SURFACE:
     case POSHOLD:
         control_sensors_enabled |= MAV_SYS_STATUS_SENSOR_Z_ALTITUDE_CONTROL;

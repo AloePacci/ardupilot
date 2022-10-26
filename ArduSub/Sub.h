@@ -477,6 +477,8 @@ private:
     void manual_run();
     bool raw_init(void);
     void raw_run();
+    bool no_gps_init(void);
+    void no_gps_run();
     void failsafe_sensors_check(void);
     void failsafe_crash_check();
     void failsafe_ekf_check(void);
